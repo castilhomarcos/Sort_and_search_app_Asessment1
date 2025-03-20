@@ -78,13 +78,19 @@ namespace Sort_and_search_app_Asessment1
 
             // Sort drawn numbers to enable binary search
             Array.Sort(drawnNums);
+            Array.Sort(playerNums);
 
 
-            // Step 3: Display the drawn numbers
+            // Step 3: Display the drawn numbers and the player's numbers
+            Console.WriteLine("\nYour numbers are:");
+            foreach (int pnum in playerNums) // Print each number in the sorted player's array
+            {
+                Console.Write($"{pnum} ");
+            } 
 
             Console.WriteLine("\nThe drawn numbers are:");
             
-            foreach (int num in drawnNums) // Print each number in the array
+            foreach (int num in drawnNums) // Print each number in the sorted random array
             {
                 Thread.Sleep(1000);
                 Console.Beep(200, 1100);
