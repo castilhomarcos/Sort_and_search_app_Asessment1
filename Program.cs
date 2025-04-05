@@ -99,7 +99,7 @@ namespace Sort_and_search_app_Asessment1
             Console.WriteLine("\n"); // New line after displaying numbers
 
 
-            // Step 4: Check for matches using Binary Search
+            // Step 4: Check for matches using Binary Search and  check percentage of matches
 
             int matches = 0; // Variable to count the number of matches
 
@@ -112,31 +112,34 @@ namespace Sort_and_search_app_Asessment1
                 }
             }
 
+
             // Display the number of matches
             Thread.Sleep(1000);
             Console.Beep(500, 1200);
             Console.WriteLine($"You matched {matches} number(s).");
 
+            // Calculate the percentage of matches
+            double percentage = (double)matches / numValues * 100; // Calculate percentage
 
             // Step 5: Display the lottery result
 
-            switch (matches)
+            if (percentage == 100)
             {
-                case 6:
-                    Console.WriteLine("JACKPOT! You won!");
-                    break;
-                case 4:
-                case 5:
-                    Console.WriteLine("Great job! Almost there!");
-                    break;
-                case 2:
-                case 3:
-                    Console.WriteLine("Not bad! Keep trying.");
-                    break;
-                default:
-                    Console.WriteLine("Better luck next time.");
-                    break;
+                Console.WriteLine("JACKPOT!!!!");
             }
+            else if (percentage >= 50)
+            {
+                Console.WriteLine("Good Job!!! That was a close call.");
+            }
+            else if (percentage >= 25)
+            {
+                Console.WriteLine("Not bad! Keep trying.");
+            }
+            else
+            {
+                Console.WriteLine("Better luck next time!");
+            }  
+            
         }
 
         
